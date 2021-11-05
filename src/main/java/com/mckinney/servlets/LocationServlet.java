@@ -18,6 +18,7 @@ public class LocationServlet extends HttpServlet {
     private LocationServiceImpl locationService = new LocationServiceImpl();
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        System.out.println("GET request to /locations");
         String countryName = req.getParameter("countryName");
         ArrayList<Location> locationList = locationService.lookUpLocationsByCountryName(countryName);
 
