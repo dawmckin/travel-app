@@ -9,13 +9,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LocationDaoImpl implements LocationDao{
 
     private ConnectionService connectionService;
 
     @Override
-    public ArrayList<Location> getLocationsByCountry(Country country) {
+    public List<Location> getLocationsByCountry(Country country) {
         connectionService = new ConnectionService();
         String sql = "select * from tourist_location where country_id = ?";
 
@@ -25,7 +26,7 @@ public class LocationDaoImpl implements LocationDao{
             pstmt.setInt(1, country.getCountryId());
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<Location> locationList = new ArrayList<>();
+            List<Location> locationList = new ArrayList<>();
 
             while(rs.next()) {
                 Location location = new Location();
@@ -43,6 +44,31 @@ public class LocationDaoImpl implements LocationDao{
             throwables.printStackTrace();
         }
 
+        return null;
+    }
+
+    @Override
+    public Location getLocationById(int locationId) {
+        return null;
+    }
+
+    @Override
+    public Location getLocationByName(String name) {
+        return null;
+    }
+
+    @Override
+    public void deleteLocation(Location location) {
+
+    }
+
+    @Override
+    public Location createLocation(Location location) {
+        return null;
+    }
+
+    @Override
+    public Location updateLocation(Location location) {
         return null;
     }
 }

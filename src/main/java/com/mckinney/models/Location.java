@@ -1,13 +1,28 @@
 package com.mckinney.models;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tourist_location")
 public class Location {
 
+    @ManyToOne()
+    @JoinColumn(name = "country_id")
     private Country country;
+
+    @Column(name = "location_name")
     private String locationName;
+
+    @Column(name = "city")
     private String cityName;
+
+    @Column(name = "address")
     private String address;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "location_id")
     private int locationId;
 
     public Location() {

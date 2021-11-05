@@ -2,10 +2,10 @@ package com.mckinney.services;
 
 import com.mckinney.models.Location;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface LocationService {
 
-    public ArrayList<Location> lookUpLocationsByCountryName(String countryName);
+    public List<Location> lookUpLocationsByCountryName(String countryName);
 
 }

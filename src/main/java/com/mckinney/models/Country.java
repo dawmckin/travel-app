@@ -1,11 +1,21 @@
 package com.mckinney.models;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "country", schema = "public")
 public class Country {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "country_id")
     private int countryId;
+
+    @Column(name = "country_name")
     private String countryName;
+
+    @Column(name = "abbreviation")
     private String abbreviation;
 
     public Country() {
