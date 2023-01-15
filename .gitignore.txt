@@ -24,9 +24,9 @@ hs_err_pid*
 
 **/pull_request_template.md
 **/issue_template.md
-**/target/
-**/bin/
-**/META-INF/**
+target
+bin
+META-INF
 
 #Eclipse
 **/.metadata
@@ -37,8 +37,8 @@ hs_err_pid*
 **/.springBeans
 
 #IDEA
-**/.idea/
-**/*.iml
+.idea
+TouristApp.iml
 
 #AnypointStudio
 **/.mule/
